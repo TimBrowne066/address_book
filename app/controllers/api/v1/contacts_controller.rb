@@ -20,7 +20,6 @@ class Api::V1::ContactsController < ApplicationController
   def destroy
     @contact = Contact.find(params[:id])
     @contact.destroy
-    redirect_to root_path
   end
 
   private

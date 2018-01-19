@@ -10,18 +10,9 @@ class ContactsContainer extends React.Component {
       contacts: this.props.contacts
     }
     this.handleNewContact = this.handleNewContact.bind(this);
-    this.handleDelete = this.handleDelete.bind(this);
   }
 
 
-  handleDelete(id){
-    let header = ReactOnRails.authenticityHeaders({'Accept': 'application/json','Content-Type': 'application/json'});
-    fetch(`/api/v1/contacts/${id}`, {
-      credentials: 'same-origin',
-      method: 'DELETE',
-      headers: header
-    })
-  }
 
   handleNewContact(data) {
     let allContacts = this.state.contacts ? this.state.contacts: []
@@ -44,7 +35,6 @@ class ContactsContainer extends React.Component {
             phoneNumber={contact.phoneNumber}
             companyName={contact.companyName}
           />
-          <a href="/"><Button type="submit" onClick={this.handleDelete(contact.id)} className="btn btn-danger">Delete Contact</Button></a>
         </div>
       )
     })
