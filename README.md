@@ -1,24 +1,31 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+My Contacts is a simple React-on-Rails application to create a list of contacts.
 
-Things you may want to cover:
+Key Dependencies:
+Rails v 5.1.4
+React-on-Rails v 10.0.2
+Webpacker
+PostgreSQL
 
-* Ruby version
+To run:
+$ git clone   https://github.com/TimBrowne066/address_book
+$ cd into directory
+$ bundle install
+$ yarn
+$ rake db:create
+$ rake db:migrate
+$ foreman start -f Procfile.dev-server
 
-* System dependencies
+Test dependencies:
+Rspec
+Capybara
+selenium-webdriver
+phantomjs
+poltergeist
 
-* Configuration
+Tests will be run live via selenium Chrome.  A browser window will pop up.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+To run tests:
+$ rake db:test:prepare
+$ rake

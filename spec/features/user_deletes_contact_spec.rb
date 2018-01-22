@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature "User adds new contact", js: true, server_rendering: true do
+feature "User deletes contact", js: true, server_rendering: true do
 
   scenario "User deletes contact" do
     visit root_path

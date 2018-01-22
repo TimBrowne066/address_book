@@ -7,7 +7,7 @@ require "capybara/poltergeist"
 require "capybara-screenshot/rspec"
 require "phantomjs"
 require "orderly"
-
+require "database_cleaner"
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -145,6 +145,7 @@ RSpec.configure do |config|
   end
 
   config.before(:each) do
+    DatabaseCleaner.clean_with(:truncation)
   end
 
   config.append_after(:each) do
