@@ -28,7 +28,6 @@ class NewContactForm extends React.Component {
       emailAddress: "",
       phoneNumber: "",
       companyName: "",
-      userLogError: false
     })
   }
 

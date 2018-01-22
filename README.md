@@ -9,13 +9,13 @@ Webpacker
 PostgreSQL
 
 To run:
-$ git clone   https://github.com/TimBrowne066/address_book
-$ cd into directory
-$ bundle install
-$ yarn
-$ rake db:create
-$ rake db:migrate
-$ foreman start -f Procfile.dev-server
+$ git clone  \n https://github.com/TimBrowne066/address_book \n
+$ cd into directory \n
+$ bundle install \n
+$ yarn \n
+$ rake db:create \n
+$ rake db:migrate \n
+$ foreman start -f Procfile.dev-server \n
 
 Test dependencies:
 Rspec
@@ -27,5 +27,5 @@ poltergeist
 Tests will be run live via selenium Chrome.  A browser window will pop up.
 
 To run tests:
-$ rake db:test:prepare
-$ rake
+$ rake db:test:prepare  \n
+$ rake  \n
