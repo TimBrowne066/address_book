@@ -1,18 +1,16 @@
-class Api::V1::ContactsController < ApplicationController
+class Api::V1::ContactsController < Api::V1::BaseController
   def index
     render json: Contact.all
   end
 
   def create
-    @contact = Contact.create(contact_params)
+    contact = Contact.new(contact_params)
 
     respond_to do |format|
-      if @contact.save
-        format.json { render json: @contact }
-        format.html { redirect_to contacts_route, notice: "Contact added successfully!"}
+      if contact.save
+        format.json { render json: contact }
       else
-        format.json { render json: @contact.errors.full_messages.join(', ') }
-        format.html { render :new, flash[:alert] = @contact.errors.full_messages.join(', ') }
+        format.json { render json: contact.errors.full_messages.join(', ') }
       end
     end
   end
@@ -20,6 +18,7 @@ class Api::V1::ContactsController < ApplicationController
   def destroy
     @contact = Contact.find(params[:id])
     @contact.destroy
+    redirect_to root_path
   end
 
   private

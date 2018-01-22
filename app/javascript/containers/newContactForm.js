@@ -11,15 +11,29 @@ class NewContactForm extends React.Component {
       phoneNumber: "",
       companyName: "",
     }
-    this.handleChange = this.handleChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.clearForm = this.clearForm.bind(this);
   }
   handleChange(e){
     let name = e.target.name
     let value = e.target.value
     this.setState({[name]: value})
   }
+
+  clearForm(){
+    this.setState({
+      firstName: "",
+      lastName: "",
+      emailAddress: "",
+      phoneNumber: "",
+      companyName: "",
+      userLogError: false
+    })
+  }
+
   handleSubmit(e){
+    e.preventDefault();
     let formPayload = { contact: {
       firstName: this.state.firstName,
       lastName: this.state.lastName,
@@ -28,19 +42,20 @@ class NewContactForm extends React.Component {
       companyName: this.state.companyName
     }};
     let header = ReactOnRails.authenticityHeaders({'Accept': 'application/json','Content-Type': 'application/json'});
-    fetch('api/v1/contacts', {
+    fetch('/api/v1/contacts/', {
       method: 'POST',
       headers: header,
       credentials: 'same-origin',
       body: JSON.stringify(formPayload)
     })
+      this.props.newContact();
+      this.clearForm();
   }
 
   render() {
-    console.log(this.state);
     return (
       <Col sm={12} className="form-background">
-        <form className="form" onSubmit={this.handleSubmit}>
+        <form className="form">
           <FormGroup controlId="formFirstName">
             <ControlLabel>First Name</ControlLabel>
             <FormControl
@@ -86,9 +101,9 @@ class NewContactForm extends React.Component {
               onChange={this.handleChange}
             />
           </FormGroup>
-          <a href="/"><Button type="submit" onClick={this.handleSubmit}>
+          <Button type="submit" onClick={this.handleSubmit}>
             submit
-          </Button></a>
+          </Button>
         </form>
       </Col>
     );

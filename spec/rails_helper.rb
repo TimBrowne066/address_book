@@ -6,6 +6,7 @@ require "capybara/rspec"
 require "capybara/poltergeist"
 require "capybara-screenshot/rspec"
 require "phantomjs"
+require "orderly"
 
 # Add additional requires below this line. Rails is not loaded until this point!
 

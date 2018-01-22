@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+.card-div{
+  width: auto;
+  border: 2px solid black;
+  border-radius: 15px;
+  padding: 10px;
+  box-shadow: 2px 2px black;
+}
