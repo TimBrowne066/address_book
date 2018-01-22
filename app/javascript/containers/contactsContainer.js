@@ -67,28 +67,28 @@ class ContactsContainer extends React.Component {
             companyName={contact.companyName}
             handleDelete={this.handleDelete}
           />
-          <button type="submit" onClick={() => { this.handleDelete(contact.id) }}>Delete</button>
+          <Button bsStyle="danger" type="submit" onClick={() => { this.handleDelete(contact.id) }}>Delete</Button>
         </div>
       )
     })
     return (
       <div className="ContactsContainer">
+        <h1 className="headline text-center">My Contacts</h1>
         <Grid>
           <Row>
-            <Col sm={12}>
-              <h1 className="headline text-center">Hello from contacts container</h1>
+            <Col sm={12} lg={6}>
+              <Col sm={12} className="contacts-list text-center">
+              <Button bsStyle="primary" onClick={this.handleEmailSort}>Sort by email</Button>
+              <Button bsStyle="success" onClick={this.handleDotComQuery}>DotCom email only</Button>
+                {contacts}
+              </Col>
             </Col>
-          </Row>
-          <Row>
-            <Col sm={12} lg={6} className="contacts-list text-center">
-            <button onClick={this.handleEmailSort}>Sort by email</button>
-            <button onClick={this.handleDotComQuery}>DotCom email only</button>
-              {contacts}
-            </Col>
-            <Col sm={12} lg={6} className="contacts-form">
-              <NewContactForm
-                newContact={this.handleNewContact}
-              />
+            <Col sm={12} lg={6}>
+              <Col sm={12} className="contacts-form">
+                <NewContactForm
+                  newContact={this.handleNewContact}
+                />
+              </Col>
             </Col>
           </Row>
         </Grid>

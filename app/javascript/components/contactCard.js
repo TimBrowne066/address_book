@@ -4,7 +4,7 @@ import { Navbar, Image, NavItem, MenuItem, NavDropdown, Nav, PanelGroup, Panel, 
 const ContactCard = (props) => {
   return (
     <div className="ContactCard">
-      <h2>{props.firstName} {props.lastName}</h2>
+      <h2 className="card-title">{props.firstName} {props.lastName}</h2>
       <p>Email: {props.emailAddress}</p>
       <p>Phone: {props.phoneNumber}</p>
       <p>Company: {props.companyName}</p>

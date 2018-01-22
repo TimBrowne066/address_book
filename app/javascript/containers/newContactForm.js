@@ -55,6 +55,7 @@ class NewContactForm extends React.Component {
   render() {
     return (
       <Col sm={12} className="form-background">
+        <h2 className="text-center form-title">Add new contact</h2>
         <form className="form">
           <FormGroup controlId="formFirstName">
             <ControlLabel>First Name</ControlLabel>
@@ -101,7 +102,7 @@ class NewContactForm extends React.Component {
               onChange={this.handleChange}
             />
           </FormGroup>
-          <Button type="submit" onClick={this.handleSubmit}>
+          <Button bsStyle="primary" type="submit" onClick={this.handleSubmit}>
             submit
           </Button>
         </form>

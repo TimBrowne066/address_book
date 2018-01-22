@@ -1,0 +1,72 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body{
+  background: asset_url('background.png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.headline{
+  background-color: rgba(236, 252, 255, 0.9);
+  width: 100%;
+  margin: 0px;
+  margin-bottom: 15px;
+  padding: 15px;
+}
+
+.card-div{
+  width: auto;
+  background-color: #F6F3EF;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 15px;
+}
+
+.card-div:hover{
+  background-color: lightblue;
+  border: 1px solid darkgray;
+  box-shadow: 2px 2px #666666;
+}
+
+.contacts-list{
+  background-color: rgba(236, 252, 255, 0.8);
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.card-title{
+  background-color: #222222;
+  color: white;
+  width: 100%;
+  margin-top: 0px;
+}
+
+.contacts-form{
+  background-color: rgba(236, 252, 255, 0.8);
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.form-title{
+  background-color: #222222;
+  color: white;
+  width: 100%;
+  margin-top: 0px;
+}
