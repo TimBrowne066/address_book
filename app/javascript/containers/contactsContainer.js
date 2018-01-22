@@ -78,9 +78,12 @@ class ContactsContainer extends React.Component {
           <Row>
             <Col sm={12} lg={6}>
               <Col sm={12} className="contacts-list text-center">
-              <Button bsStyle="primary" onClick={this.handleEmailSort}>Sort by email</Button>
-              <Button bsStyle="success" onClick={this.handleDotComQuery}>DotCom email only</Button>
-                {contacts}
+                <div className="options">
+                  <h2 className="card-title">Contacts</h2>
+                  <Button bsStyle="primary" onClick={this.handleEmailSort}>Sort by email</Button>
+                  <Button bsStyle="success" onClick={this.handleDotComQuery}>DotCom email only</Button>
+                  {contacts}
+                </div>
               </Col>
             </Col>
             <Col sm={12} lg={6}>

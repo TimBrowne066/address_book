@@ -39,6 +39,12 @@ body{
   margin: 15px;
 }
 
+.options{
+  width: auto;
+  border-radius: 5px;
+  padding: 15px;
+}
+
 .card-div:hover{
   background-color: #ddedff;
   border: 1px solid darkgray;
@@ -47,8 +53,9 @@ body{
 
 .contacts-list{
   background-color: rgba(236, 252, 255, 0.8);
-  padding: 15px;
   margin-bottom: 15px;
+  overflow: auto;
+  height: 600px;
 }
 
 .card-title{
@@ -62,6 +69,7 @@ body{
   background-color: rgba(236, 252, 255, 0.8);
   padding: 15px;
   margin-bottom: 15px;
+  height: 600px;
 }
 
 .form-title{
