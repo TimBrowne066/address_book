@@ -11,7 +11,6 @@ feature "User filters contacts by dotcom email", js: true, server_rendering: tru
     fill_in "Company", with: "Bob"
     click_button "submit"
 
-    visit root_path
     fill_in "First Name", with: "Bob"
     fill_in "Last Name", with: "Bob"
     fill_in "Email", with: "Bob@bob.com"
