@@ -38,6 +38,12 @@ class ContactsContainer extends React.Component {
       method: 'DELETE',
       headers: header,
       credentials: 'same-origin',
+    }).then(response => {
+      return response.json();
+    }).then(body => {
+      this.setState({
+        contacts: body.contacts
+      })
     })
   }
 
@@ -55,7 +61,7 @@ class ContactsContainer extends React.Component {
   }
 
   render() {
-    let contacts = this.props.contacts.map(contact => {
+    let contacts = this.state.contacts.map(contact => {
       return(
         <div className="card-div text-center" key={contact.id}>
           <ContactCard
